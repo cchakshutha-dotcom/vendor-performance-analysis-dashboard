@@ -1,68 +1,74 @@
-# 🏢 Vendor Performance Data Analytics — End-to-End Project
+# Vendor Performance Analysis Dashboard 📊📈
 
-> **Based on:** YouTube Tutorial — *Vendor Performance Data Analytics End-To-End Project | SQL + Python + Power BI + Reporting*
-> **Video:** https://youtu.be/nmCfNHjfgEY
+A Python-based Vendor Performance Analysis project developed for analyzing vendor datasets, evaluating business performance, and generating dashboard visualizations using data analytics techniques.
 
 ---
 
-## 📌 Project Overview
+# 📁 Project Structure
 
-This project analyzes **vendor sales performance** across 10 vendors and 7 product categories for the year 2023. It covers the full data analytics pipeline:
+Vendor-Performance-Analysis-Dashboard/
+│
+├── vendor.py                      ← Vendor analysis processing script
+├── eda.py                         ← Exploratory Data Analysis script
+├── dashboard.py                   ← Dashboard visualization script
+├── vendor_data.xlsx               ← Raw vendor dataset
+├── cleaned_vendor_data.xlsx       ← Cleaned and processed dataset
+├── vendor_analysis.png            ← Vendor analytics visualization
+├── performance_chart.png          ← Performance dashboard chart
+└── README.md                      ← Project documentation
 
-- Data Ingestion → SQLite database
-- Data Cleaning & Feature Engineering
+---
+
+# 📦 Dataset Information
+
+The project uses Excel-based vendor datasets containing vendor-related business information.
+
+### Dataset Files
+
+| File Name | Description |
+|---|---|
+| vendor_data.xlsx | Raw vendor dataset |
+| cleaned_vendor_data.xlsx | Cleaned vendor dataset |
+
+---
+
+# 🔍 Features of the Project
+
+- Vendor performance analysis
 - Exploratory Data Analysis (EDA)
-- 12 Business Visualizations
-- Vendor KPI Summary Report
-- SQL-based Analysis
+- Data preprocessing and cleaning
+- Dashboard analytics
+- Business performance visualization
+- Graph and chart generation
+- Vendor trend analysis
 
 ---
 
-## 📂 Project Structure
+# 📊 Visualizations Included
 
-```
-Vendor_Performance_Analysis/
-├── data/
-│   ├── vendor_sales_summary.csv          ← Raw dataset (2,000 records)
-│   ├── vendor_sales_cleaned.csv          ← Cleaned + engineered dataset
-│   ├── vendor_performance_summary.csv    ← KPI summary per vendor
-│   └── vendor_performance.db            ← SQLite database
-│
-├── notebooks/
-│   └── Vendor_Performance_Analysis.ipynb ← Main Jupyter Notebook (fully executed)
-│
-├── scripts/
-│   ├── ingestion_db.py                   ← Load CSV → SQLite DB
-│   ├── get_vendor_summary.py             ← Generate vendor KPI summary
-│   └── generate_charts.py               ← Standalone chart generation
-│
-├── output_graphs/
-│   ├── 01_total_sales_by_vendor.png
-│   ├── 02_gross_profit_by_vendor.png
-│   ├── 03_profit_margin_by_vendor.png
-│   ├── 04_sales_by_category.png
-│   ├── 05_monthly_sales_trend.png
-│   ├── 06_quarterly_sales_by_vendor.png
-│   ├── 07_quantity_sold_by_vendor.png
-│   ├── 08_correlation_heatmap.png
-│   ├── 09_sales_vs_profit_scatter.png
-│   ├── 10_profit_margin_distribution.png
-│   ├── 11_sales_distribution_pie.png
-│   └── 12_inventory_on_hand.png
-│
-└── README.md
-```
+## 📈 Vendor Analysis Chart
+Displays vendor-related analytics visually.
+
+## 📉 Performance Dashboard
+Shows vendor performance comparisons and business insights.
 
 ---
 
-## 🛠️ Software Required
+# ⚙️ Technologies Used
 
-- Python 3.8+
-- Jupyter Notebook / VS Code
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- OpenPyXL
+- Excel Dataset Processing
 
 ---
 
-## 📦 Installation
+# 🚀 How to Run the Project
+
+## Step 1 — Install Required Libraries
 
 ```bash
 pip install pandas numpy matplotlib seaborn openpyxl
@@ -70,82 +76,90 @@ pip install pandas numpy matplotlib seaborn openpyxl
 
 ---
 
-## 🚀 How to Run
+## Step 2 — Open Project Folder
 
-**Step 1:** Extract the ZIP file
+Open the extracted project folder in:
 
-**Step 2:** Open the project folder in VS Code or Terminal
+- VS Code
+- PyCharm
+- Jupyter Notebook
+- Command Prompt
 
-**Step 3:** (Optional) Run ingestion script to set up SQLite DB:
+---
+
+## Step 3 — Run EDA Script
+
 ```bash
-python scripts/ingestion_db.py
+python eda.py
 ```
 
-**Step 4:** Launch Jupyter Notebook:
+This script performs:
+- Dataset loading
+- Data exploration
+- Vendor analysis
+- Statistical summaries
+
+---
+
+## Step 4 — Run Vendor Analysis Script
+
 ```bash
-jupyter notebook
+python vendor.py
 ```
 
-**Step 5:** Open `notebooks/Vendor_Performance_Analysis.ipynb`
-
-**Step 6:** Click **Kernel → Restart & Run All**
-
----
-
-## 📊 Dataset Columns
-
-| Column | Description |
-|--------|-------------|
-| VendorName | Name of the vendor |
-| Brand | Associated brand |
-| Category | Product category |
-| PurchasePrice | Cost price per unit |
-| ActualPrice | Selling price per unit |
-| QuantitySold | Units sold |
-| QuantityOnHand | Current inventory |
-| TotalSales | Revenue (ActualPrice × Qty) |
-| TotalPurchaseCost | Cost (PurchasePrice × Qty) |
-| GrossProfit | TotalSales − TotalPurchaseCost |
-| PurchaseDate | Transaction date |
+This script:
+- Processes vendor records
+- Performs analytics
+- Generates analysis results
 
 ---
 
-## 📈 Output Charts (12 Visualizations)
+## Step 5 — Run Dashboard Script
 
-1. Total Sales by Vendor
-2. Total Gross Profit by Vendor
-3. Average Profit Margin by Vendor
-4. Total Sales by Category (Horizontal Bar)
-5. Monthly Sales Trend (Line Chart)
-6. Quarterly Sales by Vendor (Grouped Bar)
-7. Total Quantity Sold by Vendor
-8. Correlation Heatmap of Numeric Features
-9. Total Sales vs Gross Profit (Scatter Plot)
-10. Profit Margin Distribution by Vendor (Box Plot)
-11. Sales Distribution by Category (Pie Chart)
-12. Inventory on Hand by Vendor
+```bash
+python dashboard.py
+```
+
+This script generates:
+- Vendor dashboard visualizations
+- Performance charts
+- Business insights
 
 ---
 
-## 💡 Key Business Insights
+# ✅ Expected Output
 
-1. **Apex Supplies** is the top vendor — $10.6M in sales (2023)
-2. **Icon Wholesale** has the highest profit margin at **42.96%**
-3. All vendors maintain margins between **40–43%** — stable pricing policy
-4. **Apex Supplies** carries the most inventory risk (55,135 units on hand)
-5. Monthly sales are consistent — no extreme seasonal fluctuations
-6. All 7 product categories contribute roughly equally to total revenue
+After running the project successfully:
+
+- Vendor dataset loaded successfully
+- Cleaned dataset generated
+- Vendor analysis completed
+- Dashboard charts displayed
+- Performance graphs generated
 
 ---
 
-## 🔧 Tech Stack
+# 📈 Project Applications
 
-| Tool | Purpose |
-|------|---------|
-| Python 3 | Core programming language |
-| Pandas | Data manipulation |
-| NumPy | Numerical computation |
-| Matplotlib | Chart creation |
-| Seaborn | Statistical visualizations |
-| SQLite3 | Database storage & SQL queries |
-| Jupyter Notebook | Interactive analysis environment |
+- Vendor performance monitoring
+- Business analytics systems
+- Dashboard visualization
+- Business intelligence reporting
+- Data science portfolio project
+
+---
+
+# 👩‍💻 Author
+
+## Chakshutha S
+
+Artificial Intelligence and Data Science Engineering Student
+
+GitHub:
+chakshutha-dotcom
+
+---
+
+# ⭐ Project Status
+
+✅ Completed Academic Data Science Project
